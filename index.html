@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>jquery Test</title>
+</head>
+
+    <body>
+        <p>Click Here check console</p>
+        <h1>Hide Now H1 Tag</h1>
+        <h2>Hide Now1 H2 Tag</h2>
+        <h2>Hide Now2 H2 Tag</h2>
+        <h2>Hide Now3 H2 Tag</h2>
+        <h3 id="hide_h3">Hide Now1 H3 Tag using id</h3>
+        <h4>Hide Now1 H4 Tag</h4>
+        
+
+        <p>
+             there are three main types of selectors in jquery
+             1. element Selector
+             2. Id Selector
+             3. Class Selector
+        </p>
+     <p> Now element selector</p>
+     <h4>Click Now</h4>
+     <p> Now Id selector</p>
+     <h5 id="id_selector">Click Now</h5>
+     <p> Now class selector</p>
+     <h6 class="class_selector">Click Now</h6>
+     <h7 id="h7_external"> best practice  This H7 Tag is write in main html and when i click on it.
+                             it will call external jquery id selector and print that in value</h7>
+
+    <div class="event_div">
+        <h1>--------------------------Div Events-----------------</h1>
+        <h8 id="event_h3">click here to use double click events in jquery </h8>
+        <br>
+        <br>
+        <h9 id="event_h9">click here to use mouseover events in jquery. </h9>
+        <br>
+        <br>
+        <h10 id="event_h10">mouse click and leave function call using jQuery</h10>
+        <br>
+        <br> <br>
+        <br>
+      
+        <h11 id="hide_and_show">
+                Sardines" is the first episode of Inside No. 9, a British dark comedy anthology series. 
+                Written by Steve Pemberton (pictured) and Reece Shearsmith, it premiered on BBC Two on 5 February 2014. 
+                In the episode, a group of adults play sardines at an engagement party. Rebecca, the bride-to-be, finds a
+                player in a wardrobe, and they are subsequently joined by other guests. As more people enter, dark secrets 
+                are revealed, with various allusions to incest, child abuse and adultery. The humour is dark and British, 
+                with polite but awkward interactions. The story takes place entirely in the bedroom of a country house, 
+                with much of it inside the wardrobe to evoke a feeling of claustrophobia. The cast included Katherine
+                Parkinson, Tim Key, Luke Pasqualino, Ophelia Lovibond, Anne Reid, Julian Rhind-Tutt, Anna Chancellor,
+                Marc Wootton, Ben Willbond, Timothy West and the two writers. The cast and writing were praised by critics, 
+                and the episode was watched Pemberton (pictured) and Reece Shearsmith, it premiered on BBC Two on 5 February 2014. 
+                In the episode, a group of adults play sardines at an engagement party. Rebecca, the bride-to-be, finds a
+                player in a wardrobe, and they are subsequently joined by other guests. As more people enter, dark secrets 
+                are revealed, with various allusions to incest, child abuse and adultery. The humour is dark and British, 
+                with polite but awkward interactions. The story takes place entirely in the bedroom of a country house, 
+                with much of it inside the wardrobe to evoke a feeling of claustrophobia. The cast included Katherine
+                Parkinson, Tim Key, Luke Pasqualino, Ophelia Lovibond, Anne Reid, Julian Rhind-Tutt, Anna Chancellor,
+                Marc Wootton, Ben Willbond, Timothy West and the two writers. The cast and writing were praised by critics, 
+                and the episode was watched
+        </h11>
+        <br> <br>
+        <button id="hide_and_show_button">Hide And Show Text using toggle</button>
+        <br> <br>
+        <button id="hide_and_show_button_fadeOut">Hide Text using FadeOut after 5 Second</button>
+        <br> <br>
+        <button id="hide_and_show_button_fadeIn">Show Text using FadeIN after 5 Second</button>
+        <br> <br>
+        <button id="hide_and_show_button_slideToggle">Hide And Show Text using toggle after 5 sec</button>
+        <br> <br>
+        <button id="light_and_bright_animation">show light and bright Text Using animation function</button>
+        <br> <br>
+    </div>
+     
+    </body>
+    <!-- we put jquery out of body tag because it should be load after body  -->
+    <script src="jquery-3.6.1.min.js"> </script> 
+
+    <!--best practice this below is external jquery file and i import it and that code will be execute first because that code i wrote in document.ready portion -->
+    <script src="second.js"></script>    
+    
+    <!-- this file i created to events jquery -->
+    <script src="eventsInJquery.js"></script>
+
+    <script>
+        // just print jquery object
+        console.log($);  // $ == jQuery
+
+        $('p').click(function(){         // when we click on p tag then go inner part
+            console.log('clicked P Tag');
+        });
+
+        $('h1').click(function(){       // builtin Hide function in Jquery
+            $('h1').hide();             // when we click on h1 tag(hide Now1) it will be hide only Hide Now1 Only from screen
+        });
+
+        $('h2').click(function(){       // builtin Hide function in Jquery
+            $(this).hide();             // if we have multiple tags and we want to do any action like hide on specific tag
+        });                             // so we can use "this" it select that specific tag that we did click  
+
+        $('h3').click(function(){
+            $('#hide_h3').hide();      // if we want to perform on any specific id we can use this way  
+        });                            // if we want to perform on any specific class we can use this way $('.className').hide();  
+    
+    
+        // example agar mara koi paragraph aya ni hai page ma like si sa load ni howa or mana usko hide kardia hai to ya masla
+        // ho sakta hai to is ka lia ma ya karo ga phala mujha usko load karna para ga to us code ko ma document.ready ma likho ga
+
+        $(document).ready(function(){                 // it will execute before calling any function when page load
+            console.log('---------- Execute it when page Load ------------');
+        });                                           // we can write it as shortCut  $(document).ready(function(){  ==  $function(){  both do same thing
+           
+        $('h4').click(function(){
+                console.log('you click H4 Tag using element selector');
+        });
+
+        $('#id_selector').click(function(){          // it will executer when loading this page
+                console.log('printing H5 Tag using Id selector');
+        });
+
+        $('h6').click(function(){
+            console.log('class selector is printing H6 Tag');
+        });
+        
+
+        //  1. element Selector
+        $('h4').click();
+
+        //  2. Id Selector
+        $('#id_selector').click();                 // it will executer when loading this page
+
+        //  2. class Selector
+        $('.class_selector').click();              // it will executer when loading this page
+        // $('h6.class_selector').click();         // we can use it as this way too both doing same think
+        // $('h6.first').click();                  // it means if we 3 H6 Tag it will execute first H6 Tag
+
+    </script>
+
+</html>
